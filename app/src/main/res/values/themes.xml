@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.TodoDesguace" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary theme colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Background and surface colors -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+
+        <!-- Error color -->
+        <item name="colorError">@color/colorError</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@style/BlueButton</item>
+        <item name="borderlessButtonStyle">@style/BorderlessButton</item>
+        <item name="imageButtonStyle">@style/ImageButton</item>
+    </style>
+
+    <style name="Theme.TodoDesguace" parent="Base.Theme.TodoDesguace" />
+
+    <!-- Button styles -->
+    <style name="BlueButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
+    </style>
+
+    <style name="BorderlessButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:tint">@color/colorPrimary</item>
+    </style>
+</resources>

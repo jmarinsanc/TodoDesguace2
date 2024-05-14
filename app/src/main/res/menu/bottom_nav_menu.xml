@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/selector"
+        android:icon="@drawable/ic_json"
+        android:title="@string/json"/>
+
+    <item
+        android:id="@+id/buscar"
+        android:icon="@drawable/ic_search"
+        android:title="@string/buscar"/>
+    <item
+        android:id="@+id/carrito"
+        android:icon="@drawable/ic_cart_svg"
+        android:title="@string/carrito"/>
+    <item
+        android:id="@+id/cuenta"
+        android:icon="@drawable/ic_account"
+        android:title="@string/cuenta"/>
+
+
+</menu>

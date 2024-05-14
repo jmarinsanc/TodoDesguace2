@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "34662361856",
+    "project_id": "tododesguace-278f7",
+    "storage_bucket": "tododesguace-278f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34662361856:android:7503fdcca94cb3383561e5",
+        "android_client_info": {
+          "package_name": "com.example.tododesguace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeqC2UpVU8nQlCn6te_nKZVLV8cf-vvTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34662361856:android:cc85eec40dfd35d13561e5",
+        "android_client_info": {
+          "package_name": "com.jp.tododesguace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeqC2UpVU8nQlCn6te_nKZVLV8cf-vvTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
