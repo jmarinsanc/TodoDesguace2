@@ -16,6 +16,9 @@
         android:theme="@style/Theme.TodoDesguace"
         tools:targetApi="31">
         <activity
+            android:name=".SubirUnProducto"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -47,8 +50,7 @@
             android:exported="false" />
         <activity
             android:name=".AuthActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -60,6 +62,10 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
     </application>
 
 </manifest>

@@ -57,7 +57,7 @@ class AuthActivity : AppCompatActivity() {
     private fun onItemSelectedListener(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.cuenta -> {
-                val intent = Intent(this, AuthActivity::class.java)
+                val intent = Intent(this@AuthActivity, AuthActivity::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             }
@@ -145,7 +145,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun showHome(emailInfo: String, provider: ProviderType) {
-        val homeIntent = Intent(this, HomeActivity::class.java).apply {
+        val homeIntent = Intent(this, BusquedaActivity::class.java).apply {
             putExtra("email", emailInfo)
             putExtra("provider", provider.name)
         }

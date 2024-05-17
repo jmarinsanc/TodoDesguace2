@@ -18,6 +18,7 @@ class SubidaActivity : AppCompatActivity() {
     lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var selectFileButton: Button
     private lateinit var uploadFileButton: Button
+    private lateinit var subirProducto: Button
     private var jsonContent: String? = null  // Holds the JSON content as a string
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,12 @@ class SubidaActivity : AppCompatActivity() {
 
         selectFileButton = findViewById(R.id.selectFileButton)
         uploadFileButton = findViewById(R.id.uploadFileButton)
+        subirProducto = findViewById(R.id.btnSubirProducto)
+
+        subirProducto.setOnClickListener {
+            val intent = Intent(this, SubirUnProducto::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)        }
 
         selectFileButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)

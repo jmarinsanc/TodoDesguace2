@@ -22,12 +22,6 @@
             android:layout_weight="1"
             tools:listitem="@layout/item_carrito" />
 
-        <Button
-            android:id="@+id/buttonFinalizarCompra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Finalizar Compra" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp" />

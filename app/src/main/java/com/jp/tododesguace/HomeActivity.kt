@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.gms.common.api.ApiException
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -107,7 +108,9 @@ class HomeActivity : AppCompatActivity() {
             prefs.apply()
 
             FirebaseAuth.getInstance().signOut()
-            onBackPressed()
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         guardarBtn.setOnClickListener {
@@ -131,11 +134,29 @@ class HomeActivity : AppCompatActivity() {
         }
 
         recuperarBtn.setOnClickListener {
-            db.collection("users").document(email).get().addOnSuccessListener {
-                println(it.get("address") as String?)
-                direccionEditText.setText(it.get("address") as String?)
-                phoneEditText.setText(it.get("phone") as String?)
+            try {
+                if (!email.isNullOrBlank()) {
+                    db.collection("users").document(email).get().addOnSuccessListener {
+                        println(it.get("address") as String?)
+                        direccionEditText.setText(it.get("address") as String?)
+                        phoneEditText.setText(it.get("phone") as String?)
+                    }
+                } else {
+                    println("Error: El email está vacío o es null.")
+                }
+            } catch (e: IllegalArgumentException) {
+                println("Error al formar la referencia del documento: ${e.message}")
+                val intent = Intent(this, AuthActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            } catch (e: Exception) {
+                println("Error desconocido: ${e.message}")
+                val intent = Intent(this, AuthActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             }
+
+
         }
         eliminarBtn.setOnClickListener {
             db.collection("users").document(email).delete()

@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import java.text.DecimalFormat
 
 class ProductosAdapter(
@@ -74,6 +77,8 @@ class ProductoViewHolder(view: View): RecyclerView.ViewHolder(view){
     val vendedor = view.findViewById<TextView>(R.id.textViewVendedorProducto)
     val cantidad = view.findViewById<TextView>(R.id.textViewCantidad)
     val deleteBtn = view.findViewById<ImageButton>(R.id.buttonDeleteProduct)
+    val imagen: ImageView = view.findViewById(R.id.imageViewProducto)
+
 
 
     fun render(producto: Producto){
@@ -82,6 +87,14 @@ class ProductoViewHolder(view: View): RecyclerView.ViewHolder(view){
         precio.text = producto.precio
         vendedor.text = producto.vendedor
         cantidad.text = producto.cantidad
+
+        val storageRef = FirebaseStorage.getInstance().reference.child("images/${producto.id}")
+        storageRef.downloadUrl.addOnSuccessListener { uri ->
+
+            Glide.with(itemView.context)
+                .load(uri)
+                .into(imagen)
+        }
     }
     
 

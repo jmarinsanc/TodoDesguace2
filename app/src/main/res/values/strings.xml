@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">TodoDesguace</string>
+    <string name="default_notification_channel_id">default_channel_id</string>
     <string name="prefs_file">com.jp.tododesguace.PREFERENCE_FILE_KEY</string>
     <string name="default_web_client_id">firebase-adminsdk-z3t50@tododesguace-278f7.iam.gserviceaccount.com</string>
     <string name="json">Subir JSON</string>
     <string name="carrito">Carrito</string>
     <string name="cuenta">cuenta</string>
     <string name="buscar">Buscar</string>
+    <string name="fcm_message">Nuevo Mensaje</string>
+    <string name="subirProducto">Subir Producto</string>
 </resources>

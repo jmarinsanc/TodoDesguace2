@@ -36,6 +36,7 @@ class BusquedaActivity : AppCompatActivity() {
         binding = ActivityBusquedaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setupBottomMenu()
         initRecyclerView()
 
@@ -60,7 +61,7 @@ class BusquedaActivity : AppCompatActivity() {
     private fun onItemSelectedListener(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.cuenta -> {
-                val intent = Intent(this, AuthActivity::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             }
@@ -81,13 +82,11 @@ class BusquedaActivity : AppCompatActivity() {
 
     private fun filtrar(texto: String) {
         var listaFiltardo = arrayListOf<Producto>()
-
         productos.forEach {
             if (it.nombre.toLowerCase().contains(texto.toLowerCase())) {
                 listaFiltardo.add(it)
             }
         }
-
         adaptador.filtrar(listaFiltardo)
     }
 

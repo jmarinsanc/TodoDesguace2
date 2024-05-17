@@ -1,5 +1,7 @@
 package com.jp.tododesguace
 
+import java.net.URL
+
 data class Producto(
     var id: String = "",
     val nombre: String = "",
@@ -7,7 +9,6 @@ data class Producto(
     val precio: String = "0.0",
     val vendedor: String = "",
     val cantidad: String= ""
-
 )
 
 

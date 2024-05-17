@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextNombreProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Nombre del producto"
+        android:background="@drawable/rounded_edittext_border"
+        android:layout_margin="10dp"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextDescripcionProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edittext_border"
+        android:hint="Descripción del producto"
+        android:padding="16dp"
+        android:inputType="textMultiLine"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/editTextNombreProducto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextPrecioProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Precio"
+        android:layout_margin="10dp"
+        android:padding="16dp"
+        android:background="@drawable/rounded_edittext_border"
+        android:inputType="numberDecimal"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/editTextDescripcionProducto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextVendedorProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Vendedor"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edittext_border"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/editTextPrecioProducto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextCantidadProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Cantidad"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edittext_border"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/editTextVendedorProducto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageViewProducto"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toBottomOf="@id/editTextCantidadProducto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonSubirFoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Subir Foto"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/imageViewProducto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <Button
+        android:id="@+id/buttonSubirProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/subirProducto"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/buttonSubirFoto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

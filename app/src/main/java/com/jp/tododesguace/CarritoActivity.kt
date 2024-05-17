@@ -65,14 +65,11 @@ class CarritoActivity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val producto = document.toObject<Producto>()
-                    Log.d("Firestore", ": ${producto.id}")
-
                     productos.add(producto)  // Añadir cada producto a la lista mutable
                 }
                 runOnUiThread {
                     recyclerView.layoutManager = GridLayoutManager(this@CarritoActivity, 1)  // Usar GridLayoutManager con 2 columnas
                     recyclerView.adapter = ProductosAdapter(productos)
-                    println(productos)  // Imprimir la lista después de que está completamente cargada
                 }
             }
             .addOnFailureListener { exception ->
